@@ -1,0 +1,30 @@
+{% extends 'inote/base.html' %}
+
+
+{% block content %}
+
+    <h1><a href="{% url 'inote:index' %}" style="color:black; text-decoration:none;">
+        Hello,inote!
+    </a></h1>
+
+    <table class="table table-borderless">
+        <tr>
+            <th>title</th>
+            <td>{{ inote.title }}</td>
+        </tr>
+        <tr>
+            <th>text</th>
+            <td>{{ inote.text | linebreaksbr }}</td>
+        </tr>
+        <tr>
+            <th>date</th>
+            <td>{{ inote.created_at | date:"j M, y H:i:s" }}</td>
+    </table>
+
+    <div class="">
+        <a href="{% url 'inote:update' inote.pk %}" target="_blank">update</a>
+        <a href="{% url 'inote:delete' inote.pk %}" target="_blank">delete</a>
+    </div>
+
+
+{% endblock %}

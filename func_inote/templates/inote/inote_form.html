@@ -1,0 +1,24 @@
+{% extends 'inote/base.html' %}
+
+
+{% block content %}
+
+<form action="" method="POST">
+    <table class="table">
+        <tr>
+            <th>title</th>
+            <td>{{ form.title }}</td>
+        </tr>
+        <tr>
+            <th>text</th>
+            <td>{{ form.text }}</td>
+        </tr>
+        <tr>
+            <th>date</th>
+            <td>{{ form.date }}</td>
+        </tr>
+    </table>
+    <button type="submit" class="btn btn-primary">Send</button>
+    {% csrf_token %}
+</form>
+{% endblock %}

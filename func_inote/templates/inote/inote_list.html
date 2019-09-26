@@ -1,0 +1,29 @@
+{% extends 'inote/base.html' %}
+
+
+{% block title %}inote{% endblock %}
+
+
+{% block content %}
+
+<h1>Hello,inote!</h1>
+<table class="table">
+    <thead>
+    <tr>
+        <th>title</th>
+        <th>date</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for inote in inote_list %}
+    <tr>
+        <td><a href="{% url 'inote:detail' inote.pk %}">{{ inote.title }}</a></td>
+        <td>{{ inote.date }}</td>
+        <td><a href="{% url 'inote:update' inote.pk %}">update</a></td>
+        <td><a href="{% url 'inote:delete' inote.pk %}">delete</a></td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'inote/base.html' %}
+
+
+{% block content %}
+
+    <table class="table">
+        <tr>
+            <th>title</th>
+            <td>{{ inote.title }}</td>
+        </tr>
+        <tr>
+            <th>text</th>
+            <td>{{ inote.text | linebreaksbr }}</td>
+        </tr>
+        <tr>
+            <th>date</th>
+            <td>{{ inote.date }}</td>
+        </tr>
+    </table>
+
+{% endblock %}
